@@ -1,0 +1,4 @@
+npm i tailwindcss postcss autoprefixer
+
+npx tailwindcss init -postcss
+
