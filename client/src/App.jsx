@@ -1,17 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Button } from "@/components/ui/button"
+import { Routes,Route } from "react-router-dom"
+import AuthLayout from "./components/auth/layout"
+import AuthLogin from "./pages/auth/login"
+import AuthRegister from "./pages/auth/register"
+import AdminLayout from "./components/admin-view/layout"
+import AdminSidebar from "./pages/admin-view/sidebar"
+import AdminHeader from "./pages/admin-view/header"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <h1 className='text-yellow-500 text-6xl font-extrabold'>hello world</h1>
-      <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-    </div>
+    <div className="flex flex-col overflow-hidden bg-white">
+
+      <Routes>
+        <Route path="/auth" element={<AuthLayout/>} >
+            <Route path="login" element={<AuthLogin/>}/>
+            <Route path="register" element={<AuthRegister/>}/>
+        </Route>
+
+        <Route path="/admin" element={<AdminLayout/>}>
+          <Route path="sidebar" element={<AdminSidebar/>}/>
+          <Route path="header" element={<AdminHeader/>}/>
+        </Route>
+      </Routes>
+    {/* hello world */}
+     
+
     </div>
   )
 }
