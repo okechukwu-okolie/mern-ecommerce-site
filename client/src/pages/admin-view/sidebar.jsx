@@ -2,7 +2,7 @@ function AdminSidebar(){
 
      return (
         <div>
-            admin sidebar page great and goodhhh
+            admin sidebar page 
         </div>
      )
 }
