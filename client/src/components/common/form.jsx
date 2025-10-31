@@ -5,6 +5,49 @@ const CommonForm = ({formControls}) => {
 
   function renderInputsByComponentType(getControlItem){
     let element = null
+
+    switch (key) {
+      case 'input':
+        (element = <Input
+        name={getControlItem.name}
+        placeholder = {getControlItem.placeholder}
+        id={getControlItem.name}
+        type={getControlItem.type}
+        />)
+        
+        break;
+
+         case 'select':
+        (element = <Input
+        name={getControlItem.name}
+        placeholder = {getControlItem.placeholder}
+        id={getControlItem.name}
+        type={getControlItem.type}
+        />)
+        
+        break;
+
+
+         case 'textarea':
+        (element = <Input
+        name={getControlItem.name}
+        placeholder = {getControlItem.placeholder}
+        id={getControlItem.name}
+        type={getControlItem.type}
+        />)
+        
+        break;
+    
+      default:
+         element = (<Input
+        name={getControlItem.name}
+        placeholder = {getControlItem.placeholder}
+        id={getControlItem.name}
+        type={getControlItem.type}
+        />)
+        break;
+    }
+    return element
   }
   return (
     <form>
