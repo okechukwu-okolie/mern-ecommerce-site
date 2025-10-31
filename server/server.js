@@ -9,20 +9,34 @@ const PORT = process.env.PORT || 5500
 
 mongoose.connect('mongodb+srv://mern-ecommerce-site:mern-ecommerce-site@cluster0.2zydziu.mongodb.net/?appName=Cluster0').then(()=>console.log('database connected sucessfully!!!')).catch((error)=>console.log(error))
 
+// app.use(
+//     cors({
+//         origin:'http://localhost:5173/',
+//         methods:['GET','POST','DELETE','PUT'],
+//         allowedHeaders:[
+//             'Content-Type',
+//             'Authorization',
+//             'Cache-Control',
+//             'Expires',
+//             'Pragma'
+//         ],
+//         credentials:true 
+//     })
+// )
+
 app.use(
     cors({
-        origin:'http://localhost:5173/',
-        methods:['GET','POST','DELETE','PUT'],
-        allowedHeaders:[
-            'Content-Type',
-            'Authorization',
-            'Cache-Control',
-            'Expires',
-            'Pragma'
+        origin:'https............',
+        methods:['GET','PUT', 'DELETE','POST'],
+        allowedHeaders:['Content-Type',
+                        'Authorization',
+                        'Cache-Control',
+                        'Expires',
+                        'Pragma'
         ],
-        credentials:true 
-    })
-)
+        credentials:true,
+})
+) 
 app.use(cookieParser())
 app.use(express.json())
 
